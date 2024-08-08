@@ -2,6 +2,8 @@
 import {ReplyProps} from "@/libs/types";
 
 export default function Reply({ userImagePath, username, replyText, likeNum }: ReplyProps) {
+  const showLike = likeNum > 0 ? "/like.svg" : "";
+  const showLikeNum = likeNum > 0 ? `${likeNum} คน` : "";
   return <div className="d-flex gap-2 my-2 ps-5">
   <img
     src="/profileImages/puppy.jpg"

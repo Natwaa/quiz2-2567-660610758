@@ -1,5 +1,10 @@
 "use client";
 
+import { PostOwnnerProps } from "@/libs/types";
+import { CommentProps } from "@/libs/types";
+import { ReplyProps } from "@/libs/types";
+import {comments} from "@/libs/comments";
+
 export default function Home() {
   return (
     <div
@@ -87,8 +92,19 @@ export default function Home() {
           </div>
         </div>
 
-        {/* map-loop render Comment component here */}
-        
+        {/* map-loop render Comment component here */
+          comments.map((comment,i) => (
+              <Comments
+                key={i}
+                userImagePath={comment.userImagePath}
+                username={comment.username}
+                commentText={comment.commentText}
+                likeNum={comment.likeNum}
+                replies={comment.replies} 
+              />
+          ))
+        } 
+
       </div>
     </div>
   );
