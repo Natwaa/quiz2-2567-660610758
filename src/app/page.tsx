@@ -93,16 +93,7 @@ export default function Home() {
         </div>
 
         {/* map-loop render Comment component here */
-          comments.map((comment,i) => (
-              <Comments
-                key={i}
-                userImagePath={comment.userImagePath}
-                username={comment.username}
-                commentText={comment.commentText}
-                likeNum={comment.likeNum}
-                replies={comment.replies} 
-              />
-          ))
+              
         } 
 
       </div>
